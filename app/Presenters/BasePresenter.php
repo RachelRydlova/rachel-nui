@@ -17,10 +17,10 @@ class BasePresenter extends Presenter
 
 
     public static $mainMenu = [
-        ':Homepage:default' => 'Domů',
-        ':Homepage:rozcestnik' => 'O mně',
-        ':Homepage:portfolio' => 'Portfolio',
-        ':Homepage:novinky' => 'Novinky',
+        ':Homepage:kodovani' => 'Webovky',
+        ':Homepage:masaze' => 'Masáže',
+        ':Homepage:portfolio' => 'Projekty',
+        ':Homepage:novinky' => 'Novinky a články',
         ':Homepage:kontakt' => 'Kontakt'
     ];
 

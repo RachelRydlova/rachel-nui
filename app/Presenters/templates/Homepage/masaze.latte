@@ -1,13 +1,34 @@
 {block content}
 
+
+<div id="page-header" class="ph-full ph-cap-lg ph-ghost-scroll ph-image-cropped ph-content-parallax">
+    <div class="page-header-inner tt-wrap">
+        <div class="ph-caption">
+            <h1 class="ph-caption-title">
+                <div class="ph-appear">Odpočinek, regenerace <br> <span class="text-red">zážitek</span> <span class="hide-from-sm">→</span> <em class="text-stroke-light">masáž</em><br>
+                    {*                    <a n:href="Homepage:masaze" class="class="not-hide-cursor"> <span class="text-red"> masáže</span></a></div> <!-- You can use <br> to break a text line if needed -->*}
+            </h1>
+            <div class="ph-caption-title-ghost">
+                <div class="ph-appear">Rachel Rydlova</div>
+            </div>
+        </div>
+        <!-- End page header caption -->
+
+    </div> <!-- /.page-header-inner -->
+
+    <div class="tt-scroll-down">
+        <a href="#page-content" class="tt-sd-inner ph-appear" data-offset="0">
+            <div class="tt-sd-arrow">
+                <div class="tt-sd-arrow-inner"></div>
+            </div>
+            <div class="tt-sd-text">Scrolluj</div>
+        </a>
+    </div>
+    <!-- End scroll down -->
+
+</div>
+
 <div id="page-content">
-
-
-    <!-- =======================
-    ///// Begin tt-section /////
-    ============================
-    * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
-    -->
     <div class="tt-section">
         <div class="tt-section-inner tt-wrap">
 
@@ -15,23 +36,16 @@
                 <div class="tt-col-lg-9">
 
                     <div class="text-xlg anim-fadeinup">
-
-                        <!-- Begin tt-Heading
-                        ======================
-                        * Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
-                        * Use class "tt-heading-stroke" to enable stroke style.
-                        * Use class "tt-heading-center" to align tt-Heading to center.
-                        * Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
-                        -->
-                        <div class="tt-heading tt-heading-lg margin-bottom-60">
-                            <!-- <h3 class="tt-heading-subtitle">Subtitle</h3> -->
-                            <h2 class="tt-heading-title">Ahoj!</h2> <!-- You can use <br> to break a text line if needed -->
-                        </div>
+{*                        <div class="tt-heading tt-heading-lg margin-bottom-60">*}
+{*                            <!-- <h3 class="tt-heading-subtitle">Subtitle</h3> -->*}
+{*                            <h2 class="tt-heading-title">Já a masáže!</h2> <!-- You can use <br> to break a text line if needed -->*}
+{*                        </div>*}
                         <!-- End tt-Heading -->
 
-                        <p>Zajímá tě něco okolo masáží, bolí tě něco, chceš si odpočinout nebo se třeba chystáš na nějaký závod?</p>
+                        <p>Zajímá tě něco okolo masáží? Bolí tě něco? <br> Chceš si odpočinout nebo se třeba chystáš na nějaký závod?</p>
 
-                        <p>Tak to jsi tu správně. Zabývám se masáže sice krátce, ale za to intenzivně. Snažím se využívat veškeré nabité informace hned v praxi a vše dělat tak, jak bych sama chtěla u maséra zažít. Masáž sice může být hodinové trápení na lehátku, nebo naopak spaní, já se snažím najít nějaký průnik. Aby masáž byla účinná, ale zároveň jste si odpočinuli.</p>
+                        <p>Tak to jsi tu správně. Zabývám se masážemi sice krátce, ale za to intenzivně. <br> Snažím se využívat veškeré nabité informace hned v praxi a vše dělat tak, jak bych sama chtěla u maséra zažívat.
+                            <br> Masáž sice může být hodinové trápení na lehátku, nebo naopak spaní, já se ale snažím najít nějaký průnik. Aby masáž byla účinná, ale zároveň jste si odpočinuli.</p>
                     </div>
 
                 </div> <!-- /.tt-col -->
@@ -245,7 +259,7 @@
                         </div> <!-- /.tt-accordion-caret-wrap -->
                     </div> <!-- /.tt-accordion-heading -->
                     <div class="tt-accordion-content max-width-800">
-                        <p>Název napovídá, že něco bude zakryto. A ano, je tomu tak. Při cover masáži máš zakryté celé tělo. Masáž je tak vhodná například i pro ty, co jsou v tomto směru hodně stydliví a nechtějí se u maséra svlékat, ale tento případ je to zřídkakdy. Převážně tuto masáž využívame například při masážích v kancelářích či venkovních prostorách. Já však zrychlenou verzí zahajuji veškeré masáže.</p>
+                        <p>Název napovídá, že něco bude zakryto. A ano, je tomu tak. Při cover masáži máš zakryté celé tělo. Masáž je tak vhodná například i pro ty, co jsou v tomto směru hodně stydliví a nechtějí se u maséra svlékat, ale tento případ je to zřídkakdy. Převážně tuto masáž využív8me například při masážích v kancelářích či venkovních prostorách. Já však zrychlenou verzí zahajuji veškeré masáže.</p>
                     </div> <!-- /.tt-accordion-content -->
                 </div> <!-- / cover masaz .tt-accordion-item -->
 
@@ -303,12 +317,41 @@
                     </div> <!-- /.tt-accordion-content -->
                 </div> <!-- / masaz zad v sede .tt-accordion-item -->
 
+                <div class="tt-accordion-item anim-fadeinup">
+                    <div class="tt-accordion-heading">
+                        <div class="tt-ac-head cursor-alter">
+                            <h3 class="tt-ac-head-title">Kinesiotaping</h3>
+                            <!-- <div class="tt-accordion-subtext">Nam min proin eget</div> -->
+                        </div>
+
+                        <div class="tt-accordion-caret-wrap">
+                            <div class="tt-accordion-caret-inner magnetic-item">
+                                <div class="tt-accordion-caret"></div>
+                            </div>
+                        </div> <!-- /.tt-accordion-caret-wrap -->
+                    </div> <!-- /.tt-accordion-heading -->
+                    <div class="tt-accordion-content max-width-800">
+                        <p>Správným používáním technik tejpů lze nejen ulevit svalům od napětí, stabilizovat klouby, podpořit vazy a šlachy, snížit otok či urychlit hojení, ale i zmírnit nebo zcela odstranit bolest.</p>
+                    </div> <!-- /.tt-accordion-content -->
+                </div> <!-- / masaz zad v sede .tt-accordion-item -->
+
             </div>
             <!-- End accordion -->
 
         </div> <!-- /.tt-section-inner -->
     </div>
     <!-- End tt-section -->
+
+    <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
+        <div class="tt-section-inner tt-wrap">
+            <div class="tt-heading-subtitle">
+                <h3>Cena masáže</h3>
+            </div>
+            <p>Jelikož si ale i já potřebuji někdy odpočinout a třeba se i nechat masírovat, tak na konci masáže dochází k pro vás méně příjemnému momentu a tím je placení.
+                <br> Platí u mě stejná cena na všechny masáže <strong> 350 kč </strong> a v případě tejpování se bere v potaz množství tejpu, zpravidla je však cena <strong> 50-100 Kč</strong>.</p>
+            <p> <strong>První návštěvu máte vždy zdarma.</strong></p>
+        </div> <!-- /.tt-section-inner -->
+    </div>
 
 
     <!-- =======================
@@ -393,7 +436,7 @@
                                             <div class="tt-ts-text">
                                                 "Je skvělé, když někdo přesně ví, kam sáhnout, aniž by potřeboval něco vysvětlovat."
                                             </div> <!-- /.tt-ts-text -->
-                                            <div class="tt-ts-subtext">- Michal</div>
+                                            <div class="tt-ts-subtext">- Honza</div>
                                         </div> <!-- /.tt-ts-item-inner -->
                                     </div>
                                     <!-- End testimonials slider item -->
@@ -475,7 +518,7 @@
             * Use class "tt-pn-stroke" to enable title stroke style.
             -->
             <div class="tt-page-nav tt-pn-stroke">
-                <a n:href="Homepage:contant" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-envelope'></i>">
+                <a n:href="Homepage:kontakt" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-envelope'></i>">
                     <div class="tt-pn-title">Zaujalo tě něco?</div>
                     <div class="tt-pn-hover-title">?</div>
                 </a> <!-- /.tt-pn-link -->

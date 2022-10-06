@@ -17,28 +17,36 @@
 
                     <!-- Begin swiper slide
                     ======================== -->
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" n:foreach="$projects as $project">
 
                         <!-- Begin portfolio carousel item
                         ===================================
                         * Use class "pci-image-is-light" if needed, it makes the caption visible better (useful if you use light image). No effect on smaller screens!
                         -->
-                        <a href="single-project-8.html" class="tt-portfolio-carousel-item" data-cursor="View<br>Project">
+                        <a n:href="Homepage:detailProject $project->id" class="tt-portfolio-carousel-item" data-cursor="Detail<br>Projektu">
                             <div class="tt-pci-inner">
-
-                                <!-- Use class "cover-opacity-*" to set an image overlay if needed. For example "cover-opacity-2". More info in the file "helper.css". -->
-                                <figure class="tt-pci-image-wrap cover-opacity-2">
-                                    <img class="tt-pci-image swiper-lazy" src="{$basePath}/assets/img/low-qlt-thumb.jpg" data-src="{$basePath}/assets/img/portfolio/1200/portfolio-1.jpg" alt="Image">
-                                </figure> <!-- /.tt-pci-image-wrap -->
+                                {php $format = Nette\Utils\Strings::substring($project->img_hero, -3)}
+                                {if $format === mp4}
+                                    {dump $format}
+                                    <figure class="tt-pci-video ttgr-height cover-opacity-2">
+                                        <video class="pgi-video" loop muted preload="metadata" poster="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_hero}">
+                                            <source src="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_hero}" type="video/mp4">
+                                        </video>
+                                    </figure>
+                                {else}
+                                    <figure class="tt-pci-image-wrap cover-opacity-2">
+                                        <img class="tt-pci-image swiper-lazy" src="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_hero}" data-src="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_hero}" alt="{$project->title|truncate:12}">
+                                    </figure> <!-- /.tt-pci-image-wrap -->
+                                {/if}
 
                                 <div class="tt-pci-caption-front">
                                     <div class="tt-pci-caption">
                                         <div class="tt-pci-caption-inner">
                                             <div class="tt-pci-categories">
-                                                <div class="tt-pci-category">People</div>
+                                                <div class="tt-pci-category">{$project->category}</div>
                                                 <!-- <div class="tt-pci-category">Varia</div> -->
                                             </div> <!-- /.tt-pci-categories -->
-                                            <h2 class="tt-pci-title">Elegant<br class="hide-from-sm"> Women</h2> <!-- You can use <br class="hide-from-sm"> to break a text line if needed -->
+                                            <h2 class="tt-pci-title">{$project->title_thin|noescape}</h2> <!-- You can use <br class="hide-from-sm"> to break a text line if needed -->
                                         </div> <!-- /.tt-pci-caption-inner -->
                                     </div> <!-- /.tt-pci-caption -->
                                 </div> <!-- /.tt-pci-caption-front -->
@@ -46,55 +54,10 @@
                                 <div class="tt-pci-caption tt-pci-caption-back">
                                     <div class="tt-pci-caption-inner">
                                         <div class="tt-pci-categories">
-                                            <div class="tt-pci-category">People</div>
+                                            <div class="tt-pci-category">{$project->category}</div>
                                             <!-- <div class="tt-pci-category">Varia</div> -->
                                         </div> <!-- /.tt-pci-categories -->
-                                        <h2 class="tt-pci-title">Elegant<br class="hide-from-sm"> Women</h2> <!-- You can use <br class="hide-from-sm"> to break a text line if needed -->
-                                    </div> <!-- /.tt-pci-caption-inner -->
-                                </div> <!-- /.tt-pci-caption -->
-
-                            </div> <!-- /.tt-pci-inner -->
-                        </a>
-                        <!-- End portfolio carousel item -->
-
-                    </div>
-                    <!-- End swiper slide -->
-
-                    <!-- Begin swiper slide
-                    ======================== -->
-                    <div class="swiper-slide">
-
-                        <!-- Begin portfolio carousel item
-                        ===================================
-                        * Use class "pci-image-is-light" if needed, it makes the caption visible better (useful if you use light image). No effect on smaller screens!
-                        -->
-                        <a href="single-project-8.html" class="tt-portfolio-carousel-item" data-cursor="View<br>Project">
-                            <div class="tt-pci-inner">
-
-                                <!-- Use class "cover-opacity-*" to set an image overlay if needed. For example "cover-opacity-2". More info in the file "helper.css". -->
-                                <figure class="tt-pci-image-wrap cover-opacity-2">
-                                    <img class="tt-pci-image swiper-lazy" src="{$basePath}/assets/img/low-qlt-thumb.jpg" data-src="{$basePath}/assets/img/portfolio/1200/portfolio-2.jpg" alt="Image">
-                                </figure> <!-- /.tt-pci-image-wrap -->
-
-                                <div class="tt-pci-caption-front">
-                                    <div class="tt-pci-caption">
-                                        <div class="tt-pci-caption-inner">
-                                            <div class="tt-pci-categories">
-                                                <div class="tt-pci-category">Creative</div>
-                                                <!-- <div class="tt-pci-category">Varia</div> -->
-                                            </div> <!-- /.tt-pci-categories -->
-                                            <h2 class="tt-pci-title">The<br class="hide-from-sm"> Chase</h2> <!-- You can use <br class="hide-from-sm"> to break a text line if needed -->
-                                        </div> <!-- /.tt-pci-caption-inner -->
-                                    </div> <!-- /.tt-pci-caption -->
-                                </div> <!-- /.tt-pci-caption-front -->
-
-                                <div class="tt-pci-caption tt-pci-caption-back">
-                                    <div class="tt-pci-caption-inner">
-                                        <div class="tt-pci-categories">
-                                            <div class="tt-pci-category">Creative</div>
-                                            <!-- <div class="tt-pci-category">Varia</div> -->
-                                        </div> <!-- /.tt-pci-categories -->
-                                        <h2 class="tt-pci-title">The<br class="hide-from-sm"> Chase</h2> <!-- You can use <br class="hide-from-sm"> to break a text line if needed -->
+                                        <h2 class="tt-pci-title">{$project->title_thin|noescape}</h2> <!-- You can use <br class="hide-from-sm"> to break a text line if needed -->
                                     </div> <!-- /.tt-pci-caption-inner -->
                                 </div> <!-- /.tt-pci-caption -->
 

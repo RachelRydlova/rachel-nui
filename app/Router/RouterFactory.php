@@ -22,6 +22,8 @@ final class RouterFactory
         $router[] = new Nette\Application\Routers\Route('/kodovani-webovek', 'Homepage:kodovani');
         $router[] = new Nette\Application\Routers\Route('/masaze', 'Homepage:masaze');
         $router[] = new Nette\Application\Routers\Route('/portfolio', 'Homepage:portfolio');
+        $router[] = new Nette\Application\Routers\Route('/detailProjektu', 'Homepage:detailProject');
+        $router[] = new Nette\Application\Routers\Route('/detailClanku', 'Homepage:detailNew');
         $router[] = new Nette\Application\Routers\Route('/blog', 'Homepage:blog');
         $router[] = new Nette\Application\Routers\Route('/kontakt', 'Homepage:contact');
 

@@ -6,7 +6,8 @@ namespace App\Presenters;
 
 use Nette;
 use Nette\Database\Explorer;
-
+use Nette\Utils\Strings;
+use Tracy\Debugger;
 
 class HomepagePresenter extends BasePresenter
 {
@@ -23,9 +24,26 @@ class HomepagePresenter extends BasePresenter
      */
     public function beforeRender(): void
     {
-        $this->template->posts = $this->db->table('post')
+        $posts = $this->db->table('post')
             ->order('created_at DESC')
+            ->limit(7)
             ->fetchAll();
+        $this->template->posts = $posts;
+        $this->template->projects = $this->db->table('project')
+            ->order('created_at DESC')
+            ->limit(4)
+            ->fetchAll();
+        $this->template->lastPosts = $this->db->table('post')
+            ->order('created_at DESC')
+            ->limit(4)
+            ->fetchAll();
+
+        $categList = [];
+        foreach ($posts as $post) {
+            if (!in_array($post->category, $categList)) 
+                $categList[] = $post->category;
+        }
+        $this->template->categList = $categList;
     }
 
     /**
@@ -36,6 +54,44 @@ class HomepagePresenter extends BasePresenter
     public function renderDetailNew(int $postId): void
     {
         $this->template->post = $this->db->table('post')->get($postId);
+    }
+
+    /**
+     * v archivu filtruju podle kategorie
+     * @param string $category
+     * @return void
+     */
+    public function renderBlogArchive(string $category): void
+    {
+        $this->template->posts = $this->db->table('post')
+            ->order('created_at DESC')
+            ->where('category', $category)
+            ->fetchAll();
+
+    }
+
+    /**
+     * vytahnu projekty z databaze
+     * @return void
+     */
+    public function renderDetailProject($projectId): void
+    {
+        $this->template->project = $this->db->table('project')->get($projectId);
+        $this->template->lastProject = $this->db->table('project')
+            ->order('created_at DESC')
+            ->limit(1)
+            ->fetch();
+    }
+
+    /**
+     * do portfolia posilam vsechny projekty
+     * @return void
+     */
+    public function renderPortfolio(): void
+    {
+        $this->template->projects = $this->db->table('project')
+            ->order('created_at DESC')
+            ->fetchAll();
     }
 
 

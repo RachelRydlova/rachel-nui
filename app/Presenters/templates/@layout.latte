@@ -2,6 +2,16 @@
 <html>
 
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JRPXMHF2VE"></script>
+	<script n:syntax="off">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-JRPXMHF2VE');
+	</script>
+
 
 	<!-- Title -->
 	<title>{ifset title}{include title|stripHtml} | {/ifset}Rachel Rydlova</title>
@@ -37,6 +47,17 @@
 	<link rel="stylesheet" href="{$basePath}/assets/css/helper.css">
 	<link rel="stylesheet" href="{$basePath}/assets/css/theme.css">
 
+
+	<!-- Google tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-244507457-1">
+	</script>
+	<script n:syntax="off">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-244507457-1');
+	</script>
 </head>
 
 
@@ -84,7 +105,7 @@
 						<!-- Begin logo
                         ================ -->
 						<div class="tt-logo">
-							<a n:href="Homepage:">
+							<a n:href="Homepage:rozcestnik">
 								<!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
 								<img src="{$basePath}/assets/img/logo-light.png" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
 								<img src="{$basePath}/assets/img/logo-dark.png" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
@@ -182,7 +203,7 @@
 
 								<a href="#" class="tt-btn tt-btn-link scroll-to-top">
 									<span class="tt-btn-icon"><i class="fas fa-arrow-up"></i></span>
-									<div data-hover="Back to Top">Nahoru</div>
+									<div data-hover="Nahoru">Nahoru</div>
 								</a>
 
 							</div> <!-- /.footer-col-inner -->
