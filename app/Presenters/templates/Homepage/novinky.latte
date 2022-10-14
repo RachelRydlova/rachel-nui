@@ -1,3 +1,7 @@
+{block title}Svět masáží, masérství a vývoje webů {/block}
+{block metaDescription}Zjistěte více informací ze světa masáží, masérství, sportu, těla, ale také vývoje webu, grafiky, brandingu i marketingu. Zde najdete veškeré informace o masážích a webech. Pokud máte návrh na nové téma, neváhejte mne kontaktovat.{/block}
+{block keywords}{/block}
+
 {block content}
 
 <div id="page-content">
@@ -29,19 +33,19 @@
 
                         <!-- Begin blog list item info -->
                         <div class="bli-info">
-                            <div class="bli-categories">
-                                <a n:href="Homepage:blogArchive $post->category">{$post->category}</a>
-                                <!-- <a href="blog-archive.html">Uncategorized</a> -->
-                            </div>
-                            <h2 class="bli-title"><a n:href="Homepage:detailNew $post->id">{$post->title}</a></h2>
+{*                            <div class="bli-categories">*}
+{*                                <a n:href="Homepage:blogArchive $post->category">{$post->category}</a>*}
+{*                                <!-- <a href="blog-archive.html">Uncategorized</a> -->*}
+{*                            </div>*}
                             <div class="bli-meta">
                                 <span class="published">/{$post->created_at}</span>
 {*                                <span class="posted-by">- by <a href="blog-archive.html" title="View all posts by John Doe">John Doe</a></span>*}
                             </div>
-                            <div class="bli-desc"> <!-- 3 lines is optimal! -->
-                                {$post->content|truncate:120|noescape}
-                            </div>
-                            <a n:href="Homepage:detailNew $post->id" class="bli-read-more tt-btn tt-btn-primary">
+                            <h2 class="bli-title"><a n:href="Homepage:detailNew $post->id">{$post->title}</a></h2>
+{*                            <div class="bli-desc"> <!-- 3 lines is optimal! -->*}
+{*                                {$post->content|truncate:120|noescape}*}
+{*                            </div>*}
+                            <a n:href="Homepage:detailNew $post->id" class="tt-btn tt-btn-primary">
                                 <div data-hover="Číst více">Číst více</div>
                                 <span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
@@ -103,7 +107,7 @@
                             {foreach $lastPosts as $post}
                                 <li>
                                     <div class="sidebar-post-data">
-                                        <h5 class="sidebar-post-title"><a href="blog-post.html">{$post->title}</a></h5>
+                                        <h5 class="sidebar-post-title"><a n:href="Homepage:detailNew $post->id">{$post->title}</a></h5>
                                         <!-- <span class="sidebar-post-author">By: <a href="">John Doe</a></span> -->
                                         <span class="sidebar-post-date">{$post->created_at}</span>
                                     </div>

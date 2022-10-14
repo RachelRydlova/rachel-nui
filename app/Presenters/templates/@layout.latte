@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
 	<!-- Google tag (gtag.js) -->
@@ -14,19 +14,22 @@
 
 
 	<!-- Title -->
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Rachel Rydlova</title>
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Ráchel Rýdlová</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
-	<meta name="description" content="Rachel Rydlova">
-	<meta name="author" content="themetorium.net">
+	<meta name="description" content="{ifset metaDescription}{include metaDescription|stripHtml} {else}Ráchel Rýdlová - masáže a tvorba webových stránek na míru {/ifset}">
+	<meta name="author" content="Rachel Rydlova">
+	<meta name="publisher" content="Rachel Rydlova">
+	<meta name="robots" content="noindex">
+	<meta name="keywords" content="{ifset keywords}{include keywords|stripHtml} {else}masáže, masáže Vsetín, sportovní a relaxační masáž, masáž ráchel rýdlová, ráchel rýdlová, rachel rydlova, masaz, masaze, masaz rachel rydlova{/ifset}">
 
 	<!-- Mobile Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Favicon (http://www.favicon-generator.org/) -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="favikona rachelRydlova" href="{$basePath}/favicon.ico" type="image/x-icon">
+	<link href="{$basePath}/favicon.ico" type="image/x-icon">
 
 	<!-- Google Analytics -->
 	<!-- Paste your Google Analytics code here (go to http://www.google.com/analytics/ for more information). -->
@@ -34,8 +37,6 @@
 	<!-- Google fonts (https://www.google.com/fonts) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> <!-- Body font -->
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"> <!-- Secondary/Alter font -->
 
 	<!-- Libs and Plugins CSS -->
 	<link rel="stylesheet" href="{$basePath}/assets/vendor/normalize/normalize.min.css"> <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
@@ -58,6 +59,8 @@
 
 		gtag('config', 'UA-244507457-1');
 	</script>
+
+	{ifset header}{/ifset}
 </head>
 
 
@@ -73,7 +76,7 @@
 		<div class="ptr-preloader">
 			<div class="ptr-prel-content">
 				<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
-				<img src="{$basePath}/assets/img/logo-light.png" class="ptr-prel-image tt-logo-light" alt="Logo">
+				<img src="{$basePath}/assets/img/logo-light.png" class="ptr-prel-image tt-logo-light" alt="Logo Rachel Rydlova" title="domovská stránka">
 			</div> <!-- /.ptr-prel-content -->
 		</div> <!-- /.ptr-preloader -->
 	</div>
@@ -105,7 +108,7 @@
 						<!-- Begin logo
                         ================ -->
 						<div class="tt-logo">
-							<a n:href="Homepage:rozcestnik">
+							<a n:href="Homepage:" title="rozcestnik masaze | webovky">
 								<!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
 								<img src="{$basePath}/assets/img/logo-light.png" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
 								<img src="{$basePath}/assets/img/logo-dark.png" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
@@ -126,7 +129,7 @@
 								</div> <!-- /.tt-ol-menu-toggle-btn-text -->
 							</div> <!-- /.tt-ol-menu-toggle-btn-text-wrap -->
 							<div class="tt-ol-menu-toggle-btn-holder">
-								<a href="#" class="tt-ol-menu-toggle-btn magnetic-item"><span></span></a>
+								<a href="#" class="tt-ol-menu-toggle-btn magnetic-item" title="menu"><span></span></a>
 							</div> <!-- /.tt-ol-menu-toggle-btn-holder -->
 						</div>
 						<!-- End overlay menu toggle button -->
@@ -147,7 +150,7 @@
                                             ==================================== -->
 											<li class="tt-ol-submenu-wrap">
 												<div class="tt-ol-submenu-trigger">
-													<a class="{if $presenter->isLinkCurrent($link)}active{/if}" n:href="$link">{$caption}</a>
+													<a class="{if $presenter->isLinkCurrent($link)}active{/if}" n:href="$link" title="{$caption} | Rachel Rydlova">{$caption}</a>
 												</div> <!-- /.tt-ol-submenu-trigger -->
 											</li>
 										</ul>
@@ -158,11 +161,11 @@
 										<ul class="tt-ol-menu-social">
 											<li><h6 class="tt-ol-menu-social-heading">Socialní sítě:</h6></li>
 
-											<li><a href="https://www.instagram.com/rachel_rydlova/" target="_blank" rel="noopener">Instagram</a></li>
-											<li><a href="https://www.facebook.com/kovarickova/" target="_blank" rel="noopener">Facebook</a></li>
-											<li><a href="https://cz.linkedin.com/in/rachel-kovarickova/en" target="_blank" rel="noopener">LinkedIn</a></li>
-											<li><a href="https://twitter.com/RydlovaRachel" target="_blank" rel="noopener">Twitter</a></li>
-											<li><a href="https://dribbble.com/kovarickova" target="_blank" rel="noopener">Dribble</a></li>
+											<li><a href="https://www.instagram.com/rachel_rydlova/" target="_blank" rel="noopener" title="Instagram Rachel Rydlova">Instagram</a></li>
+											<li><a href="https://www.facebook.com/kovarickova/" target="_blank" rel="noopener" title="Facebook Rachel Rydlova">Facebook</a></li>
+											<li><a href="https://cz.linkedin.com/in/rachel-kovarickova/en" target="_blank" rel="noopener" title="LinkedIn Rachel Rydlova">LinkedIn</a></li>
+											<li><a href="https://twitter.com/RydlovaRachel" target="_blank" rel="noopener" title="Twitter Rachel Rydlova">Twitter</a></li>
+											<li><a href="https://dribbble.com/kovarickova" target="_blank" rel="noopener" title="Dribble Rachel Rydlova">Dribble</a></li>
 										</ul>
 										<!-- End overlay menu social links -->
 
@@ -190,6 +193,8 @@
 
 
 
+
+
 				<!-- ======================
 				///// Begin tt-footer /////
 				=========================== -->
@@ -201,7 +206,7 @@
 						<div class="footer-col tt-align-center-left">
 							<div class="footer-col-inner">
 
-								<a href="#" class="tt-btn tt-btn-link scroll-to-top">
+								<a href="#" class="tt-btn tt-btn-link scroll-to-top" title="nahoru">
 									<span class="tt-btn-icon"><i class="fas fa-arrow-up"></i></span>
 									<div data-hover="Nahoru">Nahoru</div>
 								</a>
@@ -261,10 +266,6 @@
 
 
 
-
-
-
-
 	{block scripts}
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 
@@ -290,6 +291,16 @@
 
 																			   <!-- Template master JS -->
 	<script src="{$basePath}/assets/js/theme.js"></script>
+
+
+	<script type="text/javascript">
+		/* curator-feed-default-feed-layout */
+		(function(){
+			var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+			i.src="https://cdn.curator.io/published/d0bf6c54-f40f-42b8-8bb8-49b1422635a4.js";
+			e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+		})();
+	</script>
 
 	{/block}
 </body>

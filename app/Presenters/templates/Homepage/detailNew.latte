@@ -1,3 +1,8 @@
+{block title}Detail článku  -> {$post->title|noescape|truncate:58}){/block}
+{block metaDescription}Detail článku či novinky ze se světa {$post->category} -> {$post->content|noescape|truncate:120}{/block}
+{block keywords}blog o masážích, novinky ze světa masáží, {$post->title|noescape}{/block}
+
+
 {block content}
 
 
@@ -33,7 +38,7 @@
         -->
         <div class="ph-caption">
             <div class="ph-categories ph-appear">
-                <div class="ph-category"><a n:href="Homepage:blogArchive $post->category">{$post->category}</a></div>
+                <div class="ph-category"><a n:href="Homepage:blogArchive $post->category" title="blog archiv">{$post->category}</a></div>
                 <!-- <div class="ph-category">Varia</div> -->
             </div> <!-- /.ph-categories -->
             <h1 class="ph-caption-title">

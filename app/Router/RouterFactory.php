@@ -15,19 +15,22 @@ final class RouterFactory
 	public static function createRouter(): RouteList
 	{
 		$router = new RouteList;
-		$router->addRoute('<presenter>/<action>[/<id>]', 'Homepage:default');
+        $router->addRoute('/', 'Homepage:default');
 
         // Vlastni routy
-        $router[] = new Nette\Application\Routers\Route('/o-mne-rozcestnik', 'Homepage:rozcestnik');
+//        $router[] = new Nette\Application\Routers\Route('/o-mne-rozcestnik', 'Homepage:rozcestnik');
         $router[] = new Nette\Application\Routers\Route('/kodovani-webovek', 'Homepage:kodovani');
         $router[] = new Nette\Application\Routers\Route('/masaze', 'Homepage:masaze');
         $router[] = new Nette\Application\Routers\Route('/portfolio', 'Homepage:portfolio');
+        $router[] = new Nette\Application\Routers\Route('/novinky', 'Homepage:novinky');
+        $router[] = new Nette\Application\Routers\Route('/kontakt', 'Homepage:kontakt');
         $router[] = new Nette\Application\Routers\Route('/detailProjektu', 'Homepage:detailProject');
         $router[] = new Nette\Application\Routers\Route('/detailClanku', 'Homepage:detailNew');
         $router[] = new Nette\Application\Routers\Route('/blog', 'Homepage:blog');
-        $router[] = new Nette\Application\Routers\Route('/kontakt', 'Homepage:contact');
+        $router[] = new Nette\Application\Routers\Route('/archiv', 'Homepage:blogArchive');
 
         $router[] = new Nette\Application\Routers\Route('/clanek', 'Homepage:post');
+		$router->addRoute('<presenter>/<action>[/<id>]', 'Homepage:default');
 
 		return $router;
 	}

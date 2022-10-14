@@ -1,3 +1,11 @@
+{foreach $posts as $post}
+    {php $category = $post->category}
+{/foreach}
+
+{block title}Archiv článků z kategorie {$category}{/block}
+{block metaDescription}Archiv článků a novinek na mém blogu Ráchel Rýdlová, zajímavosti ze světa IT, ale také sportu, regenerace a životního stylu{/block}
+{block keywords}masáže, cesta maséra, vše o masírování, články o masážích, jak začít s masérstvím, jak začít s masážemi, jak na masáže, novinky ze světa masáží, tvorba webových stránek, frontend, junior vývojář, junior vývojář Zlínsko{/block}
+
 {block content}
 
 <div id="page-content">
@@ -22,26 +30,26 @@
                 ========================== -->
                 <article class="blog-list-item" n:foreach="$posts as $post">
 
-                    <a n:href="Homepage:detailNew $post->id" class="bli-image-wrap" data-cursor="Číst<br>více">
+                    <a n:href="Homepage:detailNew $post->id" class="bli-image-wrap" data-cursor="Číst<br>více" title="číst více">
                         <figure class="bli-image">
-                            <img n:if="$post->img_hero" src="{$basePath}/assets/img/news/{$post->id}/{$post->img_hero}" data-src="{$basePath}/assets/img/news/{$post->title|truncate:10}/{$post->img_hero}" class="tt-lazy anim-zoomin" alt="Image">
+                            <img n:if="$post->img_hero" src="{$basePath}/assets/img/news/{$post->id}/{$post->img_hero}" data-src="{$basePath}/assets/img/news/{$post->title|truncate:10}/{$post->img_hero}" class="tt-lazy anim-zoomin" alt="{$post->title}" title="{$post->title}">
                         </figure>
 
                         <!-- Begin blog list item info -->
                         <div class="bli-info">
-                            <div class="bli-categories">
-                                <a n:href="Homepage:blogArchive $post->category">{$post->category}</a>
-                                <!-- <a href="blog-archive.html">Uncategorized</a> -->
-                            </div>
-                            <h2 class="bli-title"><a n:href="Homepage:detailNew $post->id">{$post->title}</a></h2>
-                            <div class="bli-meta">
-                                <span class="published">/{$post->created_at}</span>
+{*                            <div class="bli-categories">*}
+{*                                <a n:href="Homepage:blogArchive $post->category">{$post->category}</a>*}
+{*                                <!-- <a href="blog-archive.html">Uncategorized</a> -->*}
+{*                            </div>*}
+                            <h1 class="bli-title"><a n:href="Homepage:detailNew $post->id" title="{$post->title}">{$post->title} </a></h1>
+{*                            <div class="bli-meta">*}
+{*                                <span class="published">/{$post->created_at}</span>*}
 {*                                <span class="posted-by">- by <a href="blog-archive.html" title="View all posts by John Doe">John Doe</a></span>*}
-                            </div>
+{*                            </div>*}
                             <div class="bli-desc"> <!-- 3 lines is optimal! -->
                                 {$post->content|truncate:120|noescape}
                             </div>
-                            <a n:href="Homepage:detailNew $post->id" class="bli-read-more tt-btn tt-btn-primary">
+                            <a n:href="Homepage:detailNew $post->id" class="{*bli-read-more*} tt-btn tt-btn-primary" title="Číst více">
                                 <div data-hover="Číst více">Číst více</div>
                                 <span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
                             </a>
@@ -89,7 +97,7 @@
                             <h3 class="sidebar-heading">Kategorie</h3>
                             <ul class="list-unstyled">
                                 {foreach $categList as $categ}
-                                    <li><a n:href="Homepage:blogArchive $categ">{$categ} {* <span title="Entries in this category">26</span> *}</a></li>
+                                    <li><a n:href="Homepage:blogArchive $categ" title="archiv blogu">{$categ} {* <span title="Entries in this category">26</span> *}</a></li>
                                 {/foreach}
                             </ul>
                         </div>
@@ -103,7 +111,7 @@
                                 {foreach $lastPosts as $post}
                                     <li>
                                         <div class="sidebar-post-data">
-                                            <h5 class="sidebar-post-title"><a n:href="Homepage:detailNew $post->id">{$post->title}</a></h5>
+                                            <h5 class="sidebar-post-title"><a n:href="Homepage:detailNew $post->id" title="detail projektu {$post->title}">{$post->title}</a></h5>
                                             <!-- <span class="sidebar-post-author">By: <a href="">John Doe</a></span> -->
                                             <span class="sidebar-post-date">{$post->created_at}</span>
                                         </div>
@@ -248,11 +256,11 @@
             * Use class "tt-pn-stroke" to enable title stroke style.
             -->
             <div class="tt-page-nav tt-pn-stroke">
-                <a href="portfolio-grid-creative.html" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-arrow-right'></i>">
+                <a n:href="Homepage:portfolio" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-arrow-right'></i>" title="Portfolio">
                     <div class="tt-pn-title">Portfolio</div>
                     <div class="tt-pn-hover-title">Portfolio</div>
                 </a> <!-- /.tt-pn-link -->
-                <div class="tt-pn-subtitle anim-fadeinup">Selected Works</div>
+                <div class="tt-pn-subtitle anim-fadeinup">Všechny projekty</div>
             </div>
             <!-- End page nav -->
 

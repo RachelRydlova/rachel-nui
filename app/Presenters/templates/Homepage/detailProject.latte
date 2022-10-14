@@ -1,3 +1,7 @@
+{block title}Projekt -> {$project->title|noescape} | Ráchel Rýdlová{/block}
+{block metaDescription}Detail projektu z kategorie {$project->category} - {$project->title} | Portfolio webových prací Ráchel Rýdlová | {$project->description|truncate:120}{/block}
+{block keywords}detail projektu, portfolio developera, webové portfolio, navrh webovych stranek, navrh webu, levny web, jak rychle vytvorit web,{$project->title}{/block}
+
 {block content}
 
 <div id="page-header" class="ph-full ph-bg-image ph-image-cover-3 ph-content-parallax">
@@ -65,12 +69,11 @@
 
             <div class="tt-image lightgallery tti-fixed-height">
                 {php $format = Nette\Utils\Strings::substring($project->img_hero, -3)}
-                {dump $format}
                     {if $format === mp4}
-                    <a href="" class="lg-trigger" data-cursor="Play" data-html="
+                    <a href="" class="lg-trigger" data-cursor="Play" data-html="" title="video projektu {$project->title}">
                         <video class='lg-video-object lg-html5' controls playsinline preload='auto'>
                             <source src='{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_hero}' type='video/mp4'>
-                        </video>">
+                        </video>
                     </a>
                     {/if}
                     <figure class="cover-opacity-2">
@@ -115,7 +118,7 @@
                     <div class="tt-grid-items-wrap isotope-items-wrap lightgallery">
                         <div class="tt-grid-item isotope-item" n:if="$project->img_2">
                             <div class="ttgr-item-inner">
-                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_2}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si">
+                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_2}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si" title="{$project->title_1}">
                                     <div class="tt-gallery-item-inner">
                                         <div class="tt-gallery-image-wrap anim-zoomin">
                                             <figure class="tt-gallery-image ttgr-height">
@@ -129,7 +132,7 @@
 
                         <div class="tt-grid-item isotope-item" n:if="$project->img_3">
                             <div class="ttgr-item-inner">
-                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_3}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si">
+                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_3}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si" title="{$project->title_2}">
                                     <div class="tt-gallery-item-inner">
                                         <div class="tt-gallery-image-wrap anim-zoomin">
                                             <figure class="tt-gallery-image ttgr-height">
@@ -143,7 +146,7 @@
 
                         <div class="tt-grid-item isotope-item" n:if="$project->img_4">
                             <div class="ttgr-item-inner">
-                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_4}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si">
+                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_4}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si" title="{$project->title}">
                                     <div class="tt-gallery-item-inner">
                                         <div class="tt-gallery-image-wrap anim-zoomin">
                                             <figure class="tt-gallery-image ttgr-height">
@@ -157,7 +160,7 @@
 
                         <div class="tt-grid-item isotope-item" n:if="$project->img_5">
                             <div class="ttgr-item-inner">
-                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_5}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si">
+                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_5}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si" title="{$project->title_2}">
                                     <div class="tt-gallery-item-inner">
                                         <div class="tt-gallery-image-wrap anim-zoomin">
                                             <figure class="tt-gallery-image ttgr-height">
@@ -172,7 +175,7 @@
                         <div class="tt-grid-item isotope-item" n:if="$project->img_6">
                             <div class="ttgr-item-inner">
 
-                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_6}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si">
+                                <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_6}" class="tt-gallery-item lg-trigger" data-cursor="Prohlédnout si" title="{$project->title_1}">
                                     <div class="tt-gallery-item-inner">
                                         <div class="tt-gallery-image-wrap anim-zoomin">
                                             <figure class="tt-gallery-image ttgr-height">
@@ -223,7 +226,7 @@
                 <div class="tt-np-caption">
                     <div class="tt-np-subtitle">Poslední projekt</div>
                     <h2 class="tt-np-title">
-                        <a n:href="Homepage:detailProject $lastProject->id" data-cursor="Detail<br> Projektu">{$lastProject->title_thin|noescape}</a> <!-- You can use <br> to break a text line if needed -->
+                        <a n:href="Homepage:detailProject $lastProject->id" data-cursor="Detail<br> Projektu" title="detail projektu {$lastProject->title}">{$lastProject->title_thin|noescape}</a> <!-- You can use <br> to break a text line if needed -->
                     </h2>
                 </div> <!-- /.tt-np-caption -->
 
