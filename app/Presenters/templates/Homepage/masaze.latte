@@ -102,19 +102,6 @@
                         <div class="swiper-slide">
                             <div class="tt-content-carousel-item">
                                 <figure>
-                                    <video class="tt-cc-video" loop muted preload="metadata" poster="{$basePath}/assets/img/massage/3.jpg">
-                                        <source src="{$basePath}/assets/img/massage/vid.mp4" type="video/mp4">
-                                    </video>
-                                </figure>
-                            </div> <!-- /.tt-content-carousel-item -->
-                        </div>
-                        <!-- End swiper slide -->
-
-                        <!-- Begin swiper slide
-                        ======================== -->
-                        <div class="swiper-slide">
-                            <div class="tt-content-carousel-item">
-                                <figure>
                                     <img class="tt-cc-image swiper-lazy" src="{$basePath}/assets/img/massage/3.jpg" data-src="{$basePath}/assets/img/massage/3.jpg" alt="Image">
                                     <!-- <figcaption>Image Caption</figcaption> -->
                                 </figure>
@@ -345,7 +332,7 @@
             <p>Jelikož si ale i já potřebuji někdy odpočinout a třeba se i nechat masírovat, tak na konci masáže dochází k pro vás méně příjemnému momentu a tím je placení.
                 <br>
                 <hr> Platí u mě prozatím stejná zaváděcí cena na všechny masáže:
-                <br><strong> 450 kč</strong> <br>
+                <br><strong> 400 kč</strong> <br>
                 V případě tejpování se bere v potaz množství tejpu, zpravidla je však cena <strong> 50-100 Kč</strong>.</p>
             <hr>
             <p> Pokud je to pro Vás moc, tak mi dejte vědět a zkusíme se nějak domluvit. Cena neplatí pro děti do 18 let a lidi, kteří nejsou výdělečně činní, pokud jste třeba i matka na mateřské, tak Vám ráda vyjdu vstříc, avšak také s rozumem, nejsem schopná nabídnout opakovaně každý týden.</p>
@@ -506,14 +493,6 @@
 
     <div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150 bg-white-accent-3">
         <div class="tt-section-inner tt-wrap">
-
-            <!-- Begin tt-Heading
-            ======================
-            * Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
-            * Use class "tt-heading-stroke" to enable stroke style.
-            * Use class "tt-heading-center" to align tt-Heading to center.
-            * Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
-            -->
             <div class="tt-heading tt-heading-xlg margin-bottom-7-p anim-fadeinup max-width-1250 margin-auto">
                 <h3 class="tt-heading-subtitle">Nejnovější</h3>
                 <h2 class="tt-heading-title">Aktuality a články</h2> <!-- You can use <br> to break a text line if needed -->
@@ -522,33 +501,10 @@
                     <span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
-            <!-- End tt-Heading -->
-
-            <!-- ==========================
-            ///// Begin blog carousel /////
-            ===============================
-            * Use class "tt-blc-shifted" to enable shifted style (no effect on smaller screens!).
-            * Use class "tt-blc-hide-navigation" to hide navigation.
-            * Available data attributes:
-                    data-speed="800"......................(milliseconds)
-                    data-autoplay="5000"..................(milliseconds. Note: disabled after user first interactions)
-                    data-simulate-touch="true"............(true/false)
-                    data-pagination-type="bullets"........(bullets/fraction/progressbar)
-            -->
             <div class="tt-blog-carousel anim-fadeinup" data-speed="800" data-simulate-touch="true" data-pagination-type="bullets">
-
-                <!-- Begin swiper container -->
                 <div class="swiper">
-
-                    <!-- Begin swiper wrapper (required) -->
                     <div class="swiper-wrapper">
-
-                        <!-- Begin swiper slide
-                        ======================== -->
-                        <div class="swiper-slide" n:foreach="$posts as $post">
-
-                            <!-- Begin blog carousel item
-                            ============================== -->
+                        <div class="swiper-slide" n:foreach="$massagePosts as $post">
                             <div class="tt-blog-carousel-item">
                                 <a n:href="Homepage:detailNew $post->id" class="tt-bci-image-wrap" data-cursor="Číst<br>více">
                                     <figure class="tt-bci-image">
@@ -567,34 +523,17 @@
                                     </div> <!-- /.tt-bci-meta -->
                                 </div> <!-- /.tt-bci-inf -->
                             </div>
-                            <!-- End blog carousel item -->
-
                         </div>
-                        <!-- End swiper slide -->
-
                     </div>
-                    <!-- End swiper wrapper -->
-
                 </div>
-                <!-- End swiper container -->
-
-
-                <!-- Begin blog carousel navigation (arrows)
-                ============================================= -->
                 <div class="tt-blc-nav-prev">
                     <div class="tt-blc-nav-arrow magnetic-item"><i class="tt-arrow-left"></i></div>
                 </div>
                 <div class="tt-blc-nav-next">
                     <div class="tt-blc-nav-arrow magnetic-item"><i class="tt-arrow-right"></i></div>
                 </div>
-                <!-- End blog carousel navigation -->
-
-                <!-- Novinky carousel pagination -->
                 <div class="tt-blc-pagination hide-cursor"></div>
-
             </div>
-            <!-- End blog carousel -->
-
         </div> <!-- /.tt-section-inner -->
     </div>
 

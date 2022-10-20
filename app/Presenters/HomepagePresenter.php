@@ -28,7 +28,19 @@ class HomepagePresenter extends BasePresenter
             ->order('created_at DESC')
             ->limit(7)
             ->fetchAll();
+        $massagePosts = $this->db->table('post')
+            ->order('created_at DESC')
+            ->limit(7)
+            ->where('category','Masáže')
+            ->fetchAll();
+        $othersPosts = $this->db->table('post')
+            ->order('created_at DESC')
+            ->limit(7)
+            ->where('category != "Masáže"')
+            ->fetchAll();
         $this->template->posts = $posts;
+        $this->template->massagePosts = $massagePosts;
+        $this->template->otherPosts = $othersPosts;
         $this->template->projects = $this->db->table('project')
             ->order('created_at DESC')
             ->limit(4)
