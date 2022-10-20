@@ -55,10 +55,6 @@
                         <p>{$project->description}</p>
                     </div>
                 </div>
-
-                <div class="tt-col-lg-4">
-
-                </div>
             </div>
 
         </div>
@@ -66,28 +62,19 @@
 
     <div class="tt-section no-padding">
         <div class="tt-section-inner">
-
             <div class="tt-image lightgallery tti-fixed-height">
                 {php $format = Nette\Utils\Strings::substring($project->img_hero, -3)}
-                    {if $format === mp4}
-                    <a href="" class="lg-trigger" data-cursor="Play" data-html="" title="video projektu {$project->title}">
+                {if $format === mp4}
+                    <a href="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_hero}" class="lg-trigger" data-cursor="Play" data-html="" title="video projektu {$project->title}">
                         <video class='lg-video-object lg-html5' controls playsinline preload='auto'>
                             <source src='{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_hero}' type='video/mp4'>
                         </video>
                     </a>
-                    {/if}
-                    <figure class="cover-opacity-2">
-                        <img class="anim-image-parallax tt-lazy" src="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_1}" data-src="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_1}" alt="portfolio">
-                    </figure>
-
-                    <!-- Play button for mobile devices only -->
-                    <div class="align-center z-index-2 hide-to-mobile">
-                        <div class="tt-btn tt-btn-light tt-btn-round anim-fadeinup">
-                            <div data-hover="Play">Prohlédnout si</div> <!-- Use short text only! -->
-                        </div>
-                    </div>
+                {/if}
+                <figure class="cover-opacity-2">
+                    <img class="anim-image-parallax tt-lazy" src="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_1}" data-src="{$basePath}/assets/img/portfolio/{$project->folderTitle}/{$project->img_1}" alt="portfolio">
+                </figure>
             </div>
-
         </div>
     </div>
 
@@ -220,7 +207,7 @@
 
             <div class="tt-next-project pn-image-cover-3">
                 <div class="tt-np-image">
-                    <img src="{$basePath}/assets/img/portfolio/{$lastProject->title}/{$lastProject->img_hero}" alt="{$lastProject->title}">
+                    <img src="{$basePath}/assets/img/portfolio/{$lastProject->folderTitle}/{$lastProject->img_hero}" alt="{$lastProject->title}">
                 </div>
 
                 <div class="tt-np-caption">
