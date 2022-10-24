@@ -19,7 +19,7 @@ final class RouterFactory
 
         // Vlastni routy
 //        $router[] = new Nette\Application\Routers\Route('/o-mne-rozcestnik', 'Homepage:rozcestnik');
-        $router[] = new Nette\Application\Routers\Route('/kodovani-webovek', 'Homepage:kodovani');
+        $router[] = new Nette\Application\Routers\Route('/tvorba-webovek', 'Homepage:kodovani');
         $router[] = new Nette\Application\Routers\Route('/masaze', 'Homepage:masaze');
         $router[] = new Nette\Application\Routers\Route('/portfolio', 'Homepage:portfolio');
         $router[] = new Nette\Application\Routers\Route('/novinky', 'Homepage:novinky');
