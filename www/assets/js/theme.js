@@ -45,6 +45,9 @@
 
 
 
+import {ScrollTrigger} from "../vendor/gsap/ScrollTrigger.min";
+import {gsap} from "../vendor/gsap/gsap.min";
+
 (function ($) {
 	'use strict';
 
@@ -660,7 +663,7 @@
 		loadImage = () => {
 			newImage.onload = () => {
 				newImage.onload = null; // avoid recursion
-				newImage.src = image.src; // swap the src
+				newImage.src = image.src; // swap the assets
 				image.src = newSRC;
 				// place the low-res version on TOP and then fade it out.
 				gsap.set(newImage, {
@@ -675,7 +678,7 @@
 					opacity: 0, 
 					onComplete: () => {
 						newImage.parentNode.removeChild(newImage);
-						image.removeAttribute("data-src"); // remove "data-src" attribute if image is loaded
+						image.removeAttribute("data-assets"); // remove "data-assets" attribute if image is loaded
 					}
 				});
 				st && st.kill();
@@ -1036,7 +1039,7 @@
 
 			// Init Swiper
 			// =============
-			var $ttPortfolioSliderSwiper = new Swiper ($ttPortfolioSlider.find(".swiper")[0], {
+			var $ttPortfolioSliderSwiper = new Swiper($ttPortfolioSlider.find(".swiper")[0], {
 				// Parameters
 				direction: "horizontal",
 				effect: "slide",
@@ -1757,7 +1760,7 @@
 		hideBarsDelay: 3000, // Delay for hiding gallery controls (in ms).
 		controls: true, // If false, prev/next buttons will not be displayed.
 		mousewheel: true, // Chane slide on mousewheel.
-		download: false, // Enable download button. By default download url will be taken from data-src/href attribute but it supports only for modern browsers. If you want you can provide another url for download via data-download-url.
+		download: false, // Enable download button. By default download url will be taken from data-assets/href attribute but it supports only for modern browsers. If you want you can provide another url for download via data-download-url.
 		counter: true, // Whether to show total number of images and index number of currently displayed image.
 		swipeThreshold: 50, // By setting the swipeThreshold (in px) you can set how far the user must swipe for the next/prev image.
 		enableDrag: true, // Enables desktop mouse drag support.
@@ -2844,8 +2847,8 @@
 	function init() {
 	var vidDefer = document.getElementsByTagName("iframe");
 	for (var i=0; i<vidDefer.length; i++) {
-	if(vidDefer[i].getAttribute("data-src")) {
-	vidDefer[i].setAttribute("src",vidDefer[i].getAttribute("data-src"));
+	if(vidDefer[i].getAttribute("data-assets")) {
+	vidDefer[i].setAttribute("src",vidDefer[i].getAttribute("data-assets"));
 	} } }
 	window.onload = init;
 
