@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JRPXMHF2VE"></script>
+	<script n:syntax="off">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-JRPXMHF2VE');
+	</script>
+
+
+	<!-- Title -->
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Ráchel Rýdlová</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="description" content="{ifset metaDescription}{include metaDescription|stripHtml} {else}Ráchel Rýdlová - masáže a tvorba webových stránek na míru {/ifset}">
+	<meta name="author" content="Rachel Rydlova">
+	<meta name="publisher" content="Rachel Rydlova">
+	<meta name="keywords" content="{ifset keywords}{include keywords|stripHtml} {else}mobilni maser, pro masery, maserstvi, masersky, dobrý masér, ráchel rýdlová, rachel rydlova, masaz, masaze, masaz rachel rydlova{/ifset}">
+
+	<!-- Mobile Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Favicon (http://www.favicon-generator.org/) -->
+	<link rel="favikona rachelRydlova" href="{$basePath}/favicon.ico" type="image/x-icon">
+	<link href="{$basePath}/favicon.ico" type="image/x-icon">
+
+	<!-- Google Analytics -->
+	<!-- Paste your Google Analytics code here (go to http://www.google.com/analytics/ for more information). -->
+
+	<!-- Google fonts (https://www.google.com/fonts) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- Libs and Plugins CSS -->
+	<link rel="stylesheet" href="{$basePath}/assets/vendor/normalize/normalize.min.css"> <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
+	<link rel="stylesheet" href="{$basePath}/assets/vendor/fontawesome/css/fontawesome-all.min.css"> <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
+	<link rel="stylesheet" href="{$basePath}/assets/vendor/swiper/css/swiper-bundle.min.css"> <!-- Swiper CSS (https://swiperjs.com/) -->
+	<link rel="stylesheet" href="{$basePath}/assets/vendor/lightgallery/css/lightgallery.min.css"> <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
+
+	<!-- Template master CSS -->
+	<link rel="stylesheet" href="{$basePath}/assets/css/helper.css">
+	<link rel="stylesheet" href="{$basePath}/assets/css/theme.css">
+
+
+	<!-- Google tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-244507457-1">
+	</script>
+	<script n:syntax="off">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-244507457-1');
+	</script>
+
+	{ifset header}{/ifset}
+</head>
+
+
+
+
+<body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+	<!-- Begin page transition (do not remove!!!)
+	=========================== -->
+	<div id="page-transition">
+		<div class="ptr-overlay"></div>
+		<div class="ptr-preloader">
+			<div class="ptr-prel-content">
+				<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
+				<img src="{$basePath}/assets/img/logo-light.png" class="ptr-prel-image tt-logo-light" alt="Logo Rachel Rydlova" title="domovská stránka">
+			</div> <!-- /.ptr-prel-content -->
+		</div> <!-- /.ptr-preloader -->
+	</div>
+	<!-- End page transition -->
+
+	<!-- Begin magic cursor
+	======================== -->
+	<div id="magic-cursor">
+		<div id="ball"></div>
+	</div>
+	<!-- End magic cursor -->
+
+
+
+
+	<!-- ******* Begin body inner ******** -->
+	<main id="body-inner">
+		<!-- ****** Begin scroll container ********* -->
+		<div id="scroll-container">
+
+			<!-- ===================
+            ///// Begin header /////
+            -->
+			<header id="tt-header" class="tt-header-fixed">
+				<div class="tt-header-inner"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag!). Note: additionally you can use prepared helper class "max-width-*" to add custom width to "tt-wrap". Example: "max-width-1500" (class "tt-wrap" is still required!). More info about helper classes can be found in the file "helper.css". -->
+
+					<div class="tt-header-col">
+
+						<!-- Begin logo
+                        ================ -->
+						<div class="tt-logo">
+							<a n:href="Homepage:" title="rozcestnik masaze | webovky">
+								<!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
+								<img src="{$basePath}/assets/img/logo-light.png" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
+								<img src="{$basePath}/assets/img/logo-dark.png" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
+							</a>
+						</div>
+						<!-- End logo -->
+
+					</div> <!-- /.tt-header-col -->
+
+					<div class="tt-header-col">
+
+						<!-- Begin overlay menu toggle button -->
+						<div id="tt-ol-menu-toggle-btn-wrap">
+							<div class="tt-ol-menu-toggle-btn-text-wrap hide-cursor">
+								<div class="tt-ol-menu-toggle-btn-text">
+									<span class="text-menu" data-hover="Otevřít">Menu</span>
+									<span class="text-close">Zavřít</span>
+								</div> <!-- /.tt-ol-menu-toggle-btn-text -->
+							</div> <!-- /.tt-ol-menu-toggle-btn-text-wrap -->
+							<div class="tt-ol-menu-toggle-btn-holder">
+								<a href="#" class="tt-ol-menu-toggle-btn magnetic-item" title="menu"><span></span></a>
+							</div> <!-- /.tt-ol-menu-toggle-btn-holder -->
+						</div>
+						<!-- End overlay menu toggle button -->
+
+						<!-- Begin overlay menu
+                        ========================
+                        * Use class "tt-ol-menu-count" to enable menu counter.
+                        -->
+						<nav class="tt-overlay-menu tt-ol-menu-count">
+							<div class="tt-ol-menu-ghost">Objevuj</div>
+							<div class="tt-ol-menu-holder">
+								<div class="tt-ol-menu-inner tt-wrap">
+									<div class="tt-ol-menu-content">
+
+										<!-- Begin menu list -->
+										<ul class="tt-ol-menu-list" n:inner-foreach="App\Presenters\BasePresenter::$mainMenu as $link => $caption">
+											<!-- Begin submenu (submenu master)
+                                            ==================================== -->
+											<li class="tt-ol-submenu-wrap">
+												<div class="tt-ol-submenu-trigger">
+													<a class="{if $presenter->isLinkCurrent($link)}active{/if}" n:href="$link" title="{$caption} | Rachel Rydlova">{$caption}</a>
+												</div> <!-- /.tt-ol-submenu-trigger -->
+											</li>
+										</ul>
+										<!-- End menu list -->
+
+										<!-- Begin overlay menu social links
+                                        ===================================== -->
+										<ul class="tt-ol-menu-social">
+											<li><h6 class="tt-ol-menu-social-heading">Socialní sítě:</h6></li>
+
+											<li><a href="https://www.instagram.com/rachel_rydlova/" target="_blank" rel="noopener" title="Instagram Rachel Rydlova">Instagram</a></li>
+											<li><a href="https://www.facebook.com/kovarickova/" target="_blank" rel="noopener" title="Facebook Rachel Rydlova">Facebook</a></li>
+											<li><a href="https://cz.linkedin.com/in/rachel-kovarickova/en" target="_blank" rel="noopener" title="LinkedIn Rachel Rydlova">LinkedIn</a></li>
+											<li><a href="https://twitter.com/RydlovaRachel" target="_blank" rel="noopener" title="Twitter Rachel Rydlova">Twitter</a></li>
+											<li><a href="https://dribbble.com/kovarickova" target="_blank" rel="noopener" title="Dribble Rachel Rydlova">Dribble</a></li>
+										</ul>
+										<!-- End overlay menu social links -->
+
+									</div> <!-- /.tt-ol-menu-content -->
+								</div> <!-- /.tt-ol-menu-inner -->
+							</div> <!-- /.tt-ol-menu-holder -->
+						</nav>
+						<!-- End overlay menu -->
+
+					</div> <!-- /.header-col -->
+				</div> <!-- /.header-inner -->
+			</header>
+			<!-- End header -->
+
+
+
+			<!-- *************************************
+            *********** Begin content wrap ***********
+            ************************************** -->
+			<div id="content-wrap">
+
+
+
+				{include content}
+
+
+
+
+
+				<!-- ======================
+				///// Begin tt-footer /////
+				=========================== -->
+				<footer id="tt-footer">
+					<div class="tt-footer-inner">
+
+						<!-- Begin footer column
+						========================= -->
+						<div class="footer-col tt-align-center-left">
+							<div class="footer-col-inner">
+
+								<a href="#" class="tt-btn tt-btn-link scroll-to-top" title="nahoru">
+									<span class="tt-btn-icon"><i class="fas fa-arrow-up"></i></span>
+									<div data-hover="Nahoru">Nahoru</div>
+								</a>
+
+							</div> <!-- /.footer-col-inner -->
+						</div>
+						<!-- Begin footer column -->
+
+						<!-- Begin footer column
+						========================= -->
+						<div class="footer-col tt-align-center order-m-last">
+							<div class="footer-col-inner">
+
+								<div class="tt-copyright text-gray">
+{*									<a href="https://themetorium.net" target="_blank" rel="noopener" class="tt-btn tt-btn-link">*}
+										<div><a title="můžeš psát" href="mailto:info@rachelrydlova.cz" class="magnetic-item not-hide-cursor">info@rachelrydlova.cz</a>
+										<a title="můžeš zavolat" href="tel:+420736717723" class="magnetic-item not-hide-cursor">736 717 723</a></div>
+{*									</a>*}
+								</div>
+
+							</div> <!-- /.footer-col-inner -->
+						</div>
+						<!-- Begin footer column -->
+
+						<!-- Begin footer column
+						========================= -->
+						<div class="footer-col tt-align-center-right">
+							<div class="footer-col-inner">
+
+								<div class="footer-social">
+									<div class="footer-social-text"><span>Sleduj</span><i class="fas fa-share-alt"></i></div>
+									<div class="social-buttons">
+										<ul>
+											<li><a href="https://www.instagram.com/rachel_rydlova/" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+											<li><a href="https://www.facebook.com/kovarickova/" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+											<li><a href="https://cz.linkedin.com/in/rachel-kovarickova/en" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a></li>
+											<li><a href="https://twitter.com/RydlovaRachel" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+											<li><a href="https://dribbble.com/kovarickova" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-dribbble"></i></a></li>
+										</ul>
+									</div> <!-- /.social-buttons -->
+								</div> <!-- /.footer-social -->
+
+							</div> <!-- /.footer-col-inner -->
+						</div>
+						<!-- Begin footer column -->
+
+					</div> <!-- /.tt-section-inner -->
+				</footer>
+				<!-- End tt-footer -->
+
+			</div>
+			<!-- End content wrap -->
+		</div>
+		<!-- End scroll container -->
+	</main>
+	<!-- End body inner -->
+
+
+
+	{block scripts}
+		<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+
+		<!-- ====================
+		///// Scripts below /////
+		===================== -->
+
+		<!-- Core JS -->
+		<script src="{$basePath}/assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
+		<script src="{$basePath}/src/main.js"></script>
+
+																			   <!-- Libs and Plugins JS -->
+{*		<script src="{$basePath}/assets/vendor/gsap/gsap.min.js"></script> <!-- GSAP JS (https://greensock.com/gsap/) -->*}
+{*		<script src="{$basePath}/assets/vendor/gsap/ScrollToPlugin.min.js"></script> <!-- GSAP ScrollToPlugin JS (https://greensock.com/scrolltoplugin/) -->*}
+{*		<script src="{$basePath}/assets/vendor/gsap/ScrollTrigger.min.js"></script> <!-- GSAP ScrollTrigger JS (https://greensock.com/scrolltrigger/) -->*}
+
+{*		<script src="{$basePath}/assets/vendor/smooth-scrollbar.js"></script> <!-- Smooth Scrollbar JS (https://github.com/idiotWu/smooth-scrollbar/) -->*}
+{*		<script src="{$basePath}/assets/vendor/swiper/js/swiper-bundle.min.js"></script> <!-- Swiper JS (https://swiperjs.com/) -->*}
+{*		<script src="{$basePath}/assets/vendor/isotope/imagesloaded.pkgd.min.js"></script> <!-- imagesloaded JS (more info: https://imagesloaded.desandro.com/) -->*}
+{*		<script src="{$basePath}/assets/vendor/isotope/isotope.pkgd.min.js"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->*}
+{*		<script src="{$basePath}/assets/vendor/isotope/packery-mode.pkgd.min.js"></script> <!-- Isotope Packery Mode JS (https://isotope.metafizzy.co/layout-modes/packery.html) -->*}
+{*		<script src="{$basePath}/assets/vendor/lightgallery/js/lightgallery-all.min.js"></script> <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->*}
+{*		<script src="{$basePath}/assets/vendor/jquery.mousewheel.min.js"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->*}
+
+																				   <!-- Template master JS -->
+
+
+	{/block}
+</body>
+
+
+
+</html>

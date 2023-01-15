@@ -1,0 +1,268 @@
+{block title}Svět masáží, masérství a vývoje webů {/block}
+{block metaDescription}Zjistěte více informací ze světa masáží, masérství, sportu, těla, ale také vývoje webu, grafiky, brandingu i marketingu. Zde najdete veškeré informace o masážích a webech. Pokud máte návrh na nové téma, neváhejte mne kontaktovat.{/block}
+{block keywords}{/block}
+
+{block content}
+
+<div id="page-content">
+
+
+    <!-- =======================
+    ///// Begin tt-section /////
+    ============================
+    * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+    -->
+    <div class="tt-section">
+        <div class="tt-section-inner tt-wrap max-width-900">
+
+            <!-- Begin blog list
+            =====================
+            * Use class "bli-image-cropped" to grop blog list item images (set fixed height).
+            * Use class "bli-compact" to enable compact blog list style. Note: If "tt-sidebar" is used, then add more width to "tt-section-inner", for example "max-width-1600".
+            -->
+            <div id="blog-list" class="bli-image-cropped">
+
+                <!-- Begin blog list item
+                ========================== -->
+                <article class="blog-list-item" n:foreach="$posts as $post">
+
+                    <a n:href="Homepage:detailNew $post->id" class="bli-image-wrap" data-cursor="Číst<br>více">
+                        <figure class="bli-image">
+                            <img n:if="$post->img_hero" src="{$basePath}/assets/img/news/{$post->id}/{$post->img_hero}" data-src="{$basePath}/assets/img/news/{$post->title|truncate:10}/{$post->img_hero}" class="tt-lazy anim-zoomin" alt="Image">
+                        </figure>
+
+                        <!-- Begin blog list item info -->
+                        <div class="bli-info">
+{*                            <div class="bli-categories">*}
+{*                                <a n:href="Homepage:blogArchive $post->category">{$post->category}</a>*}
+{*                                <!-- <a href="blog-archive.html">Uncategorized</a> -->*}
+{*                            </div>*}
+                            <div class="bli-meta">
+                                <span class="published">/{$post->created_at}</span>
+{*                                <span class="posted-by">- by <a href="blog-archive.html" title="View all posts by John Doe">John Doe</a></span>*}
+                            </div>
+                            <h2 class="bli-title"><a n:href="Homepage:detailNew $post->id">{$post->title}</a></h2>
+{*                            <div class="bli-desc"> <!-- 3 lines is optimal! -->*}
+{*                                {$post->content|truncate:120|noescape}*}
+{*                            </div>*}
+                            <a n:href="Homepage:detailNew $post->id" class="tt-btn tt-btn-primary">
+                                <div data-hover="Číst více">Číst více</div>
+                                <span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                        <!-- End blog list item info -->
+
+                    </a>
+                </article>
+                <!-- End blog list item -->
+
+            </div>
+            <!-- End blog list -->
+
+
+            <!-- Begin sliding sidebar
+            ===========================
+            * Use class "tt-ss-right" to align sidebar to right.
+            -->
+            <div class="tt-sliding-sidebar-wrap">
+                <div class="tt-sliding-sidebar">
+                    <div class="tt-sliding-sidebar-inner">
+
+                        <!-- Begin sidebar widget -->
+{*                        <div class="sidebar-widget sidebar-search">*}
+{*                            <h3 class="sidebar-heading">Hledat</h3>*}
+
+{*                            <!-- Begin form (Note: for design purposes only!)*}
+{*                            ================*}
+{*                            * Use class "tt-form-filled" or "tt-form-minimal" to change form style.*}
+{*                            * Use class "tt-form-sm" or "tt-form-lg" to change form size (no class = default size).*}
+{*                            -->*}
+{*                            <form>*}
+{*                                <div class="tt-form-btn-inside">*}
+{*                                    <input class="tt-form-control" type="text" id="search" placeholder="Něco napiš & zmáčkni enter" required>*}
+{*                                    <button type="submit"><i class="fas fa-search"></i></button>*}
+{*                                </div>*}
+{*                            </form>*}
+{*                            <!-- End form -->*}
+
+{*                        </div>*}
+                        <!-- End sidebar widget -->
+
+                        <!-- Begin sidebar widget -->
+                        <div class="sidebar-widget sidebar-categories">
+                            <h3 class="sidebar-heading">Kategorie</h3>
+                            <ul class="list-unstyled">
+                                {foreach $categList as $categ}
+                                    <li><a n:href="Homepage:blogArchive $categ">{$categ} {* <span title="Entries in this category">26</span> *}</a></li>
+                                {/foreach}
+                            </ul>
+                        </div>
+                        <!-- End sidebar widget -->
+
+                        <!-- Begin sidebar widget -->
+                        <div class="sidebar-widget sidebar-post-list">
+                            <!-- Can be "Recent Posts" or "Popular Posts" etc. -->
+                            <h3 class="sidebar-heading">Poslední články</h3>
+                            <ul class="list-unstyled">
+                            {foreach $lastPosts as $post}
+                                <li>
+                                    <div class="sidebar-post-data">
+                                        <h5 class="sidebar-post-title"><a n:href="Homepage:detailNew $post->id">{$post->title}</a></h5>
+                                        <!-- <span class="sidebar-post-author">By: <a href="">John Doe</a></span> -->
+                                        <span class="sidebar-post-date">{$post->created_at}</span>
+                                    </div>
+                                </li>
+                            {/foreach}
+                            </ul>
+                        </div>
+                        <!-- End sidebar widget -->
+
+                        <!-- Begin sidebar widget -->
+{*                        <div class="sidebar-widget sidebar-comments-list">*}
+{*                            <h3 class="sidebar-heading">Recent Comments</h3>*}
+{*                            <ul class="list-unstyled">*}
+{*                                <li class="sidebar-comment">*}
+{*                                    <div class="sidebar-comment-meta">*}
+{*                                        <div class="sidebar-comment-data">*}
+{*                                            <span class="sidebar-comment-author"><a href="">John Doe</a></span>*}
+{*                                            <span class="sidebar-comment-date">May 14, 2022</span>*}
+{*                                        </div>*}
+{*                                    </div>*}
+{*                                    <div class="sidebar-comment-text">*}
+{*                                        <a href="">Aliquet praesent tempor ac dolor aliquet. Risus mi vitae hendrerit orci vitae amet lacus tertis ...</a>*}
+{*                                    </div>*}
+{*                                </li>*}
+
+{*                                <li class="sidebar-comment">*}
+{*                                    <div class="sidebar-comment-meta">*}
+{*                                        <div class="sidebar-comment-data">*}
+{*                                            <span class="sidebar-comment-author"><a href="">David Bradley</a></span>*}
+{*                                            <span class="sidebar-comment-date">May 14, 2022</span>*}
+{*                                        </div>*}
+{*                                    </div>*}
+{*                                    <div class="sidebar-comment-text">*}
+{*                                        <a href="">Laculis molestie rhoncus. Amet maecenas ut orci id dui. Et dui morbi. Non mauris nautis trettis ...</a>*}
+{*                                    </div>*}
+{*                                </li>*}
+
+{*                                <li class="sidebar-comment">*}
+{*                                    <div class="sidebar-comment-meta">*}
+{*                                        <div class="sidebar-comment-data">*}
+{*                                            <span class="sidebar-comment-author"><a href="">Kate Dixon</a></span>*}
+{*                                            <span class="sidebar-comment-date">May 14, 2022</span>*}
+{*                                        </div>*}
+{*                                    </div>*}
+{*                                    <div class="sidebar-comment-text">*}
+{*                                        <a href="">Feugiat fringilla sequi. Anunc adipiscing nisl lorem morbi tincidunt gravida vistrim nocktac fitset ...</a>*}
+{*                                    </div>*}
+{*                                </li>*}
+{*                            </ul>*}
+{*                        </div>*}
+                        <!-- End sidebar widget -->
+
+                        <!-- Begin sidebar widget -->
+{*                        <div class="sidebar-widget sidebar-tags">*}
+{*                            <h3 class="sidebar-heading">Tags</h3>*}
+{*                            <div class="sidebar-tags-list">*}
+{*                                <ul>*}
+{*                                    <li><a href="blog-archive.html">#portfolio</a></li>*}
+{*                                    <li><a href="blog-archive.html">#multipurpose</a></li>*}
+{*                                    <li><a href="blog-archive.html">#minimal</a></li>*}
+{*                                    <li><a href="blog-archive.html">#agency</a></li>*}
+{*                                    <li><a href="blog-archive.html">#creatives</a></li>*}
+{*                                    <li><a href="blog-archive.html">#freelancers</a></li>*}
+{*                                    <li><a href="blog-archive.html">#design</a></li>*}
+{*                                    <li><a href="blog-archive.html">#bootstrap</a></li>*}
+{*                                    <li><a href="blog-archive.html">#responsive</a></li>*}
+{*                                    <li><a href="blog-archive.html">#simple</a></li>*}
+{*                                    <li><a href="blog-archive.html">#creative</a></li>*}
+{*                                    <li><a href="blog-archive.html">#blog</a></li>*}
+{*                                    <li><a href="blog-archive.html">#wordpress</a></li>*}
+{*                                    <li><a href="blog-archive.html">#black &amp; white</a></li>*}
+{*                                </ul>*}
+{*                            </div> <!-- /.sidebar-tags-list -->*}
+{*                        </div>*}
+                        <!-- End sidebar widget -->
+
+                        <!-- Begin sidebar widget -->
+{*                        <div class="sidebar-widget sidebar-meta">*}
+{*                            <h3 class="sidebar-heading">Meta</h3>*}
+{*                            <ul class="list-unstyled">*}
+{*                                <li><a href="">Log In</a></li>*}
+{*                                <li><a href="">Entries RSS</a></li>*}
+{*                                <li><a href="">Comments RSS</a></li>*}
+{*                                <li><a href="https://themetorium.net" target="_blank" rel="noopener" class="tt-link">Themetorium.net</a></li>*}
+{*                            </ul>*}
+{*                        </div>*}
+                        <!-- End sidebar widget -->
+
+                    </div> <!-- /.tt-sliding-sidebar-inner -->
+                </div> <!-- /.tt-sliding-sidebar -->
+
+                <!-- Begin sliding sidebar trigger -->
+                <div class="tt-sliding-sidebar-trigger hide-cursor">
+                    <span class="tt-ss-icon"><i class="fas fa-bars"></i></span>
+                    <span class="tt-ss-icon-close"><i class="fas fa-times"></i></span>
+                </div>
+                <!-- End sliding sidebar trigger -->
+
+                <!-- Close overlay -->
+                <div class="tt-sliding-sidebar-close cursor-close"></div>
+
+            </div>
+            <!-- End sliding sidebar -->
+
+
+            <!-- Begin tt-pagination
+            =========================
+            * Use class "tt-pagin-center" to align center.
+            -->
+            {* <div class="tt-pagination anim-fadeinup">
+                <div class="tt-pagin-prev">
+                    <a href="" class="tt-pagin-item magnetic-item"><i class="fas fa-chevron-left"></i></a>
+                </div>
+                <div class="tt-pagin-numbers">
+                    <a href="#" class="tt-pagin-item magnetic-item active">1</a>
+                    <a href="" class="tt-pagin-item magnetic-item">2</a>
+                    <a href="" class="tt-pagin-item magnetic-item">3</a>
+                    <a href="" class="tt-pagin-item magnetic-item">4</a>
+                </div>
+                <div class="tt-pagin-next">
+                    <a href="" class="tt-pagin-item tt-pagin-next magnetic-item"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div> *}
+            <!-- End tt-pagination -->
+
+        </div> <!-- /.tt-section-inner -->
+    </div>
+    <!-- End tt-section -->
+
+
+    <!-- =======================
+    ///// Begin tt-section /////
+    ============================
+    * You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+    -->
+    <div class="tt-section padding-bottom-xlg-150">
+        <div class="tt-section-inner tt-wrap">
+
+            <!-- Begin page nav
+            ====================
+            * Use class "tt-pn-center" to align page nav to center.
+            * Use class "tt-pn-stroke" to enable title stroke style.
+            -->
+            <div class="tt-page-nav tt-pn-stroke">
+                <a href="portfolio-grid-creative.html" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-arrow-right'></i>">
+                    <div class="tt-pn-title">Portfolio</div>
+                    <div class="tt-pn-hover-title">Portfolio</div>
+                </a> <!-- /.tt-pn-link -->
+                <div class="tt-pn-subtitle anim-fadeinup">Selected Works</div>
+            </div>
+            <!-- End page nav -->
+
+        </div> <!-- /.tt-section-inner -->
+    </div>
+    <!-- End tt-section -->
+
+
+</div>
